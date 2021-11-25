@@ -1,4 +1,5 @@
 function showDetail() {
+  document.querySelector(".recipe").innerHTML = ``;
   const urlParams = new URLSearchParams(window.location.search);
   const recipeId = urlParams.get("recipe");
 

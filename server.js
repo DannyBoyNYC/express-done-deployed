@@ -1,10 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const fileUpload = require("express-fileupload");
-// require("dotenv").config();
-// if (process.env.NODE_ENV === "production") {
-//   require("dotenv").config();
-// }
+
+if (process.env.NODE_ENV === "production") {
+  require("dotenv").config();
+}
+
+console.log("process.env.NODE_ENV = ", process.env.NODE_ENV);
 
 const recipeModel = require("./api/recipe.model");
 const recipeControllers = require("./api/recipe.controllers");
@@ -43,6 +45,6 @@ app.post("/api/upload", recipeControllers.upload);
 const PORT = process.env.PORT || 3456;
 
 app.listen(PORT, () =>
-  console.log(`Server running at port ${PORT}. Process Env: ${process.env.PORT});
+  console.log(`Server running at port ${PORT}. Process Env db: ${process.env.DATABASE});
 `)
 );
