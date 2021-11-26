@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: false })); // for parsing application/x-w
 app.use(fileUpload());
 
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/static/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.get("/api/recipes", recipeControllers.findAll);
